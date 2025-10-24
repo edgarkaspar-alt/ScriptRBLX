@@ -5,6 +5,20 @@ local UserInputService = game:GetService("UserInputService")
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+-- Configuración del aviso
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Position = UDim2.new(0, 10, 0, 10)
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Text = "Script en ejecución"
+TextLabel.TextSize = 24
+TextLabel.TextScaled = true
+
+ScreenGui.Parent = game:GetService("CoreGui")
+TextLabel.Parent = ScreenGui
 
 -- URL del servidor que proporciona las letras necesarias
 local serverUrl = "https://ejemplo.com/api/letras"
